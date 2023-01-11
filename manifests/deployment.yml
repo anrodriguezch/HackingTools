@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "anrchclusterprisma-e813"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "anrchclusterprisma-e813"
+  template:
+    metadata:
+      labels:
+        app: "anrchclusterprisma-e813"
+    spec:
+      containers:
+        - name: "anrchclusterprisma-e813"
+          image: "anrchcontainerregistry.azurecr.io/anrchclusterprisma"
+          ports:
+          - containerPort: 8080
